@@ -5,8 +5,8 @@ public class Main {
 		
 		Scanner bot=new Scanner(System.in);
 		
-		Pessoa pessoa[] = new Pessoa[10];
-		for(int i=0;i<10;i++) {
+		Pessoa pessoa[] = new Pessoa[2];
+		for(int i=0;i<2;i++) {
 			pessoa[i]= new Pessoa();
 			System.out.println("\nnome e sobrenome: ");
 		    pessoa[i].setNome(bot.next());
