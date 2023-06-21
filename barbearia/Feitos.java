@@ -4,7 +4,9 @@ public class Feitos {
 public Feitos(Cliente cliente,Servico servico){ 
     this.Cliente=cliente;
     this.servico=servico;   
-}    
+} 
+public Feitos(){
+}   
 public Cliente getCliente() {
     return Cliente;
 }
