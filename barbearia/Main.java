@@ -12,7 +12,7 @@ public class Main {
 		int contador = 1;
 		int contadorServico = 1;
 
-		System.out.println("1 - Gestão de Clientes\n2 - Gestão de Serviços");
+		System.out.println("1 - Gestão de Clientes\n2 - Gestão de Serviços\n3-registrar e consultar entrada:");
 		int resposta = input.nextInt();
 
 		if (resposta == 1) {
