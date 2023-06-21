@@ -6,7 +6,6 @@ public class Main {
         GestaoClientes gc = new GestaoClientes();
 		GestaoServicos gs = new GestaoServicos();
 		GestaoFinaceira gf= new GestaoFinaceira();
-        Feitos f= new Feitos();
 		Scanner input = new Scanner(System.in);
 
 		int opção = 0;
@@ -235,16 +234,31 @@ public class Main {
 				opção=input.nextInt();
 				switch(opção){
 					case 1:
-                        	System.out.println("código do cliente e o código do serviço:");
-							int codigoProduto=input.nextInt();
+                        	System.out.println("código do cliente:");
                             int codigo= input.nextInt();
 							for(int i=0;i<gc.listarClientes().size();i++){
-                                if(codigo==gclistarClientes())
+                                if(codigo==gc.listarClientes().get(i).getCodigo()){
+									System.out.println("código do cliente:");							
+									int codigoServico=input.nextInt();
+									for(int j = 0;j<gs.mostrarServicos().size();j++){
+										if(codigoServico==gs.mostrarServicos().get(i).getCodigo()){
+											Feitos pedidofeito= new Feitos();
+											gf.AddServicosPrestados(pedidofeito);
+										}
+									}
+								}
                             } 
 					case 2:
-
+							System.out.println("Digite o Código do Cliente mensal:");
+							int codigoMensal=input.nextInt();
+							for(int i=0;i<gc.listarClientes().size();i++){
+								if(codigoMensal==gc.listarClientes().get(i).getCodigo()){
+									ClienteMensal novoMensal= new ClienteMensal(codigoMensal,gc.listarClientes().get(i).getNome(), gc.listarClientes().get(i).getEspecialidade(), gc.listarClientes().get(i).getTelefone(), gc.listarClientes().get(i).getEndereco());
+									gf.AddClienteMensal(novoMensal);
+								}
+							}
 					case 3:
-
+							gf.somaEntrada();
 				}
 			}
 		}

@@ -14,7 +14,7 @@ public void AddServicosPrestados(Feitos feitos){
 public void AddClienteMensal(ClienteMensal clientepagos){
     pagosPremium.add(clientepagos);
 }
-public double somaEntrada(Feitos feitos,ClienteMensal clientepagos){
+public double somaEntrada(){
     for(int i=0;i<servicosPrestados.size();i++){
         totalComum+=servicosPrestados.get(i).servico.getPreco();
     }
